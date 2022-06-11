@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+
+.result-main {
+	display:flex;
+}
+
+.switch-box {
+	width:50px;
+	height:30px;
+	display:flex;
+	flex-direction: column;
+}
+
+li {
+	list-style-type: none;
+	
+}
+
+.result-minor {
+	display: flex;
+}
+
+form {
+	margin: 10px;
+}

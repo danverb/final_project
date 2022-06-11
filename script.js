@@ -13,24 +13,26 @@ const api = "454d05ebd24526c72d0c9bd6862193f6"
 
 weatherForm.addEventListener("submit", getWeather);
 
+// Toggle Celcius and Farenheit
 const celciusButton = document.querySelector("#celcius");
 const farenheitButton = document.querySelector("#farenheit");
 
-//Display city name when user hits submit
+celciusButton.addEventListener("click", makeCelcius);
+function makeCelcius() {
+    //change url string to include metric
+}
 
-//Toggle temperature from kelvin to c or f
-//create event listener
-//run function to determine which button is active
-//create variable and assign active button
-//append variable to urlString
+farenheitButton.addEventListener("click", makeFarenheit);
+function makeFarenheit() {
+    //change url string to include imperial
+}
 
-const urlString = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=imperial`;
 
 async function getWeather(event) {
     event.preventDefault();
     const city = cityInput.value;
     if (city) {
-        
+        const urlString = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=imperial`;
         const response = await fetch(urlString);
         const data = await response.json();
 

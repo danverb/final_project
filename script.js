@@ -13,29 +13,29 @@ const api = "454d05ebd24526c72d0c9bd6862193f6"
 
 weatherForm.addEventListener("submit", getWeather);
 
-// Toggle Celcius and Farenheit
-const celciusButton = document.querySelector("#celcius");
-const farenheitButton = document.querySelector("#farenheit");
-
-celciusButton.addEventListener("click", makeCelcius);
-function makeCelcius() {
-    //change url string to include metric
-}
-
-farenheitButton.addEventListener("click", makeFarenheit);
-function makeFarenheit() {
-    //change url string to include imperial
-}
-
-
 async function getWeather(event) {
     event.preventDefault();
     const city = cityInput.value;
+
+    //Function to toggle metric and imperial units
+    let units = ""
+    const toggle = document.querySelector("#temp-switch")
+    toggle.addEventListener ("click", changeToMetric);
+    function changeToMetric(){
+        
+        if (toggle.checked) {
+            units = "metric";
+        } else {
+            units = "imperial";
+        }
+    }
+
     if (city) {
-        const urlString = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=imperial`;
+        changeToMetric();
+        let urlString = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=${units}`;
         const response = await fetch(urlString);
         const data = await response.json();
-
+        console.log(toggle);
         const temp = data?.main?.temp;
         resultTemp.innerText = `Temperature is: ${temp}`;
 
@@ -48,8 +48,8 @@ async function getWeather(event) {
         const humidity = data.main.humidity;
         resultHumidity.innerText = `${humidity}% humidity`;
 
-        const weather = data?.weather[0];
-        weatherSummary.innerText = `${weather}`;
+        const weather = data?.weather[0].description;
+        weatherSummary.innerText = `${weather.toUpperCase()}`;
 
         const windSpeed = data?.wind?.speed;
         resultWindSpeed.innerText = `${windSpeed} mph`;

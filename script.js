@@ -1,3 +1,6 @@
+const video = document.querySelector("#cloud-video");
+video.playbackRate = 0.7;
+
 const weatherForm = document.querySelector("#weather-search");
 const cityInput = document.querySelector("#city");
 const submit = document.querySelector("#submit");
@@ -37,7 +40,7 @@ async function getWeather(event) {
         const data = await response.json();
         console.log(toggle);
         const temp = data?.main?.temp;
-        resultTemp.innerText = `Temperature is: ${temp}`;
+        resultTemp.innerText = `The current temperature in ${city} is: ${temp}`;
 
         const tempLow = data.main.temp_min;
         resultTempLow.innerText = `Low: ${tempLow}`;

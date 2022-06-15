@@ -23,8 +23,8 @@ async function getWeather(event) {
     //Function to toggle metric and imperial units
     let units = ""
     const toggle = document.querySelector("#temp-switch")
-    toggle.addEventListener ("click", changeToMetric);
-    function changeToMetric(){
+    toggle.addEventListener ("click", checkUnit);
+    function checkUnit(){
         
         if (toggle.checked) {
             units = "metric";
@@ -34,7 +34,7 @@ async function getWeather(event) {
     }
 
     if (city) {
-        changeToMetric();
+        checkUnit();
         let urlString = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=${units}`;
         const response = await fetch(urlString);
         const data = await response.json();

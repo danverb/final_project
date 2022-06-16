@@ -14,6 +14,7 @@ const weatherSummary = document.querySelector("#weather");
 const resultHumidity = document.querySelector("#humidity");
 const resultWindSpeed = document.querySelector("#wind-speed");
 const resultWindDirection = document.querySelector("#wind-direction");
+const resultIcon = document.querySelector("#icon-render");
 
 const api = "454d05ebd24526c72d0c9bd6862193f6" 
 
@@ -61,6 +62,12 @@ async function getWeather(event) {
 
         const windDirection = data?.wind?.deg;
         resultWindDirection.innerText = `${windDirection} degrees`;
+
+        const icon = data.weather[0].icon;
+
+        const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${icon}.svg`;
+        resultIcon.setAttribute("src", iconUrl);
+
     } else {
         alert("Please enter a city");
     }

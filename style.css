@@ -3,6 +3,7 @@
 	padding: 0;
 	box-sizing:border-box;
 	font-size: 100%;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .landing-container {
@@ -30,18 +31,8 @@
 	display:flex;
 	flex-direction:column;
 	text-align: center;
-	justify-content: center;
+	justify-content: space-around;
 }
-
-
-/* This needs looking into */
-/* .scroll-down {
-	justify-self: flex-end;
-} */
-/* .weather-text {
-	position:absolute;
-} */
-
 
 
 .main-container {
@@ -49,21 +40,46 @@
 	flex-direction: column;
 	align-items: center;
 	height:100vh;
+	justify-content: space-around;
 }
 
-.result-main {
+.form-container {
+	display: flex;
+	flex-direction: row;
+	padding:50px 0px 20px 0px;
+	font-size: 1.2em;
+}
+
+.weather-search {
+	font-size:1.5em;
+}
+
+.form-switch {
+	padding-left: 4em;
+}
+
+.result-container {
 	display:flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top:2em;
+	flex-grow: 1;
 }
 
 li {
 	list-style-type: none;	
 }
 
-.result-minor {
+.result-details {
+	font-size:1.5em;
+	justify-content: space-around;
+}
+
+.result-high-low {
 	display: flex;
+	justify-content: space-around;
 }
 
 .weather-text {
-	font-family: 'Montserrat', sans-serif;
 	font-size: 5em;
 }

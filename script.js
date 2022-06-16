@@ -1,9 +1,12 @@
 const video = document.querySelector("#cloud-video");
 video.playbackRate = 0.7;
 
+//Query selectors for form input
 const weatherForm = document.querySelector("#weather-search");
 const cityInput = document.querySelector("#city");
 const submit = document.querySelector("#submit");
+
+//Query selectors for displaying result
 const resultTemp = document.querySelector("#result");
 const resultTempLow = document.querySelector("#result-low");
 const resultTempHigh = document.querySelector("#result-high");
@@ -25,7 +28,6 @@ async function getWeather(event) {
     const toggle = document.querySelector("#temp-switch")
     toggle.addEventListener ("click", checkUnit);
     function checkUnit(){
-        
         if (toggle.checked) {
             units = "metric";
         } else {

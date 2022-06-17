@@ -1,5 +1,5 @@
-const video = document.querySelector("#cloud-video");
-video.playbackRate = 0.7;
+// const video = document.querySelector("#cloud-video");
+// video.playbackRate = 0.7;
 
 //Query selectors for form input
 const weatherForm = document.querySelector("#weather-search");

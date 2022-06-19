@@ -66,28 +66,20 @@ async function getWeather(event) {
         console.log(typeof weatherMain);
 
         let conditions = {
-            "Rain": 11, 
-            "Thunderstorm":13, 
-            "Drizzle": 44, 
-            "Snow":39, 
-            "Atmosphere":71, 
-            "Clear": "url('pexels-josh-hild-2422497.jpg')", 
-            "Clouds":99};
+            "Rain": "url('pexels-pixabay-414659.jpg')", 
+            "Thunderstorm":"url('pexels-pixabay-414659.jpg')", 
+            "Drizzle": "url('pexels-pixabay-414659.jpg')", 
+            "Snow": "url('pexels-eberhard-grossgasteiger-691581.jpg')", 
+            "Atmosphere": "url('pexels-chris-f-4997340.jpg')", 
+            "Clear": "url('pexels-skitterphoto-3768.jpg')", 
+            "Clouds": "url('pexels-tim-mossholder-1605148.jpg')"
+        };
+
         let newBackground = conditions[`${weatherMain}`]
         
         currentBackground = document.querySelector(".background-image-container");
         currentBackground.style.backgroundImage = newBackground;
-        // for (let condition of conditions) {
-        //     switch(true){)
-        //         case (condition === weatherMain):
-        //             console.log(conditions.value)
-        //             break
-        //         default:
-        //             console.log("doesn't work")
-        //             break
-        //     }
-        // }
-
+       
     } else {
         alert("Please enter a city");
     }

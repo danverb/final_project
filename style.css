@@ -12,7 +12,6 @@ body {
 
 .landing-container {
 	position:relative;
-	height:100%;
 	width: 100%;
 	display:flex;
 	flex-direction: column;
@@ -45,11 +44,15 @@ body {
 }
 
 .nav-container {
-	position:relative;
-	height:100%;
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	display:flex;
+	background-color: rgba(0, 0, 0, 0.5);
 	text-align: center;
-	justify-content: space-around;
+	justify-content: space-between;
+	z-index: 100;
 }
 
 
@@ -57,7 +60,7 @@ h1 {
 	font-size: 3em;
 }
 
-.nav-items-container ul{
+.nav-right-container ul{
 	display:flex;
 }
 
@@ -78,7 +81,7 @@ li {
 	flex-direction: column;
 	align-items: center;
 	height:100vh;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 .form-container {

@@ -82,9 +82,6 @@ async function getWeather(event) {
        
     } else {
         alert("Please enter a city");
-    }
-    
-
-    // weatherForm.reset();  
+    } 
 }
 

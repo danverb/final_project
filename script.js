@@ -38,7 +38,6 @@ async function getWeather(event) {
         let urlString = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=${units}`;
         const response = await fetch(urlString);
         const data = await response.json();
-        console.log(toggle);
         const temp = Math.round(data?.main?.temp);
         const cityName = data?.name;
         resultTemp.innerText = `The current temperature in ${cityName} is: ${temp}`;
@@ -62,6 +61,32 @@ async function getWeather(event) {
 
         const iconUrl = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${icon}.svg`;
         resultIcon.setAttribute("src", iconUrl);
+
+        const weatherMain = data.weather[0].main;
+        console.log(typeof weatherMain);
+
+        let conditions = {
+            "Rain": 11, 
+            "Thunderstorm":13, 
+            "Drizzle": 44, 
+            "Snow":39, 
+            "Atmosphere":71, 
+            "Clear": "url('pexels-josh-hild-2422497.jpg')", 
+            "Clouds":99};
+        let newBackground = conditions[`${weatherMain}`]
+        
+        currentBackground = document.querySelector(".background-image-container");
+        currentBackground.style.backgroundImage = newBackground;
+        // for (let condition of conditions) {
+        //     switch(true){)
+        //         case (condition === weatherMain):
+        //             console.log(conditions.value)
+        //             break
+        //         default:
+        //             console.log("doesn't work")
+        //             break
+        //     }
+        // }
 
     } else {
         alert("Please enter a city");

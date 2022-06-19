@@ -4,16 +4,18 @@
 	box-sizing:border-box;
 	font-size: 100%;
 	font-family: 'Montserrat', sans-serif;
-	color: white;
 }
 
-
+body {
+	color: white;
+}
 
 .landing-container {
 	position:relative;
 	height:100vh;
-	width: 100vw;
+	width: 100%;
 	display:flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
@@ -22,15 +24,16 @@
 	content:"";
 	display:block;
 	background-color: black;
-	opacity:0.5;
+	opacity:0.4;
 	height:100%;
 	width:100%;
 	position: absolute;
+	overflow:hidden;
 }
 
 
 .background-image-container{
-	background-image: url("pexels-pixabay-531767.jpg");
+	background-image: url("pexels-francesco-ungaro-544249.jpg");
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -57,6 +60,7 @@
 	flex-direction:column;
 	text-align: center;
 	justify-content: space-around;
+	/* color: white; */
 }
 
 /* .scroll-down-text {
@@ -68,6 +72,12 @@
 	font-size: 10em;
 }
 
+@media(max-width:680px) {
+	.landing-text {
+		font-size:5em;
+	}
+}
+
 
 .main-container {
 	position:relative;
@@ -75,18 +85,18 @@
 	flex-direction: column;
 	align-items: center;
 	height:100vh;
-	justify-content: space-around;
+	justify-content: center;
 }
 
 .form-container {
 	display: flex;
 	flex-direction: row;
-	padding:50px 0px 20px 0px;
 	font-size: 1.2em;
 }
 
 .weather-search {
 	font-size:1.5em;
+	color: black;
 }
 
 .form-switch {
@@ -98,7 +108,6 @@
 	flex-direction: column;
 	align-items: center;
 	padding-top:2em;
-	flex-grow: 1;
 }
 
 /* li {
@@ -117,4 +126,8 @@
 
 #weather {
 	text-transform: capitalize;
+}
+
+#icon-render {
+	color: white;
 }

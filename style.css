@@ -8,6 +8,7 @@
 
 body {
 	color: white;
+	height:100vh;
 }
 
 .background-image-container::after {
@@ -15,58 +16,55 @@ body {
 	display:block;
 	background-color: rgb(26, 45, 47);
 	opacity:0.4;
-	height:100%;
-	width:100%;
+	height:100vh;
+	width:100vw;
 	position: absolute;
 	overflow:hidden;
 }
 
 
 .background-image-container{
-	background-image: url("pexels-max-andrey-1254736.jpg");
+	background-image: url("pexels-pixabay-76969.jpg");
 	position: fixed;
 	top: 0;
 	left: 0;
 	background-size: cover;
 	background-position: center center no-repeat;
-	width:100%;
-	height:100%;
+	width:100vw;
+	height:100vh;
 	overflow:hidden;
 }
 
-.landing-container {
-	position:relative;
-	width: 100%;
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
+/* .landing-container {
+	height:100vh;
+} */
+/* 
+.main-container {
+	height:100vh;
+} */
 
 .nav-container {
-	position:absolute;
-	top: 0;
+	position:fixed;
+	top: 15px;
 	left: 0;
 	width: 100%;
 	display:flex;
 	background-color: rgba(0, 0, 0, 0.5);
 	align-items: center;
 	justify-content: space-between;
-	padding:10px 15px;
+	padding:15px 15px;
 }
 
-/* Need to work on spacing right nav links */
-.nav-right-items li{
-	padding-right: 15px;
-}
 
 h1 {
-	font-size: 2em;
+	font-size: 1.5em;
 	text-transform: uppercase;
 }
 
 .nav-right-container ul{
 	display:flex;
+	width:40vw;
+	justify-content: space-around;
 }
 
 li {
@@ -112,13 +110,15 @@ li {
 }
 
 .result-container {
-	background-color: rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.5);
 	display:flex;
 	flex-direction: column;
 	align-items: center;
-	width:100%;
-	/* height:100%; */
-	border:2px solid black;
+	justify-content: center;
+	width:50vw;
+	height:50vh;
+	border:none;
+	border-radius: 20px;
 	color:black;
 }
 

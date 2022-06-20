@@ -71,7 +71,7 @@ async function getWeather(event) {
             "Drizzle": "url('pexels-pixabay-414659.jpg')", 
             "Snow": "url('pexels-eberhard-grossgasteiger-691581.jpg')", 
             "Atmosphere": "url('pexels-chris-f-4997340.jpg')", 
-            "Clear": "url('pexels-skitterphoto-3768.jpg')", 
+            "Clear": "url('pexels-francesco-ungaro-281260.jpg')", 
             "Clouds": "url('pexels-tim-mossholder-1605148.jpg')"
         };
 

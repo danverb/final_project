@@ -4,6 +4,7 @@ const cityInput = document.querySelector("#city");
 const submit = document.querySelector("#submit");
 
 //Query selectors for displaying result
+const resultContainer = document.querySelector(".result-container");
 const resultTemp = document.querySelector("#result");
 const resultTempLow = document.querySelector("#result-low");
 const resultTempHigh = document.querySelector("#result-high");
@@ -17,16 +18,20 @@ const api = "454d05ebd24526c72d0c9bd6862193f6"
 weatherForm.addEventListener("submit", getWeather);
 
 async function getWeather(event) {
+    // resultContainer.classList.remove("result-container-open");
     event.preventDefault();
     const city = cityInput.value;
-    let units = ""
+    let units = "";
+    let speedUnits = "";
     const toggle = document.querySelector("#temp-switch")
     toggle.addEventListener ("click", checkUnit);
     function checkUnit(){
         if (toggle.checked) {
             units = "metric";
+            speedUnits = "kph";
         } else {
             units = "imperial";
+            speedUnits = "mph";
         }
     }
 
@@ -37,6 +42,9 @@ async function getWeather(event) {
         const data = await response.json();
         const temp = Math.round(data?.main?.temp);
         const cityName = data?.name;
+
+        resultContainer.classList.add("result-container-open");
+
         resultTemp.innerText = `${cityName} ${temp}`;
 
         const tempLow = Math.round(data.main.temp_min);
@@ -74,8 +82,8 @@ async function getWeather(event) {
 
         let newBackground = conditions[`${weatherMain}`]
         
-        currentBackground = document.querySelector(".background-image-container");
-        currentBackground.style.backgroundImage = newBackground;
+        const emptyBackground = document.querySelector(".result-background-image")
+        emptyBackground.style.backgroundImage = newBackground;
        
     } else {
         alert("Please enter a city");
@@ -87,4 +95,5 @@ reset.addEventListener("click", resetResult);
 function resetResult(){
     getWeather();
 }
+
 

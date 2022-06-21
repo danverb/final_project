@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="landing-container">
+    <main class="main-container">
         <nav class ="nav-container">
             <div class="title-text-container">
                 <h1 class="title-text">Totally Accurate <span id="blue-title-text">Weather Search</span></h1>
@@ -28,10 +28,9 @@
                 </ul>
             </div>
         </nav> 
-        <section class="main-container">
+        <section class="hero-container">
             <div class="form-container">
                 <form id="weather-search">
-                    <!-- <label for="city">Enter City:</label> -->
                     <input id="city" type="text" name="city">
                     <input id="submit-button" type = "submit" value = "Get Weather">
                 </form>
@@ -43,19 +42,23 @@
             <div class="result-container">
                 <div class = "result-background-image"></div>
                 <div class="overlay"></div>
-                <div class="result-text">
-                    <div class="result-main">
-                        <h2 id="result"></h2>
-                    </div>
-                    <div class="result-details">
-                        <div class="result-high-low">
+                <div class="result-text result-text-size">
+                    <div class="result-left">
+                        <p id="city-name"></p>
+                        <p id="result"></p>
+                        <div class="result-bottom">
                             <p id="result-low"></p>
                             <p id="result-high"></p>
                         </div>
+                    </div>
+                    <div class="result-right">
                         <img src="" id="icon-render"/>
-                        <p id="weather"></p>
-                        <p id="humidity"></p>
-                        <p id="wind-speed"></p>
+                        <div class="result-details">
+                            <p id="weather"></p>
+                            <p id="humidity"></p>
+                            <p id="wind-speed"></p>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

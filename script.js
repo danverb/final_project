@@ -5,6 +5,7 @@ const submit = document.querySelector("#submit");
 
 //Query selectors for displaying result
 const resultContainer = document.querySelector(".result-container");
+const cityRender = document.querySelector("#city-name");
 const resultTemp = document.querySelector("#result");
 const resultTempLow = document.querySelector("#result-low");
 const resultTempHigh = document.querySelector("#result-high");
@@ -43,15 +44,15 @@ async function getWeather(event) {
         const temp = Math.round(data?.main?.temp);
         const cityName = data?.name;
 
-        resultContainer.classList.add("result-container-open");
+        cityRender.innerText = `${cityName}`
 
-        resultTemp.innerText = `${cityName} ${temp}`;
+        resultTemp.innerText = `${temp}°`;
 
         const tempLow = Math.round(data.main.temp_min);
-        resultTempLow.innerText = `Low: ${tempLow}`;
+        resultTempLow.innerText = `Low: ${tempLow}°`;
 
         const tempHigh = Math.round(data.main.temp_max);
-        resultTempHigh.innerText = `High: ${tempHigh}`;
+        resultTempHigh.innerText = `High: ${tempHigh}°`;
 
         const humidity = data.main.humidity;
         resultHumidity.innerText = `${humidity}% humidity`;
@@ -60,7 +61,7 @@ async function getWeather(event) {
         weatherSummary.innerText = `${weather}`;
 
         const windSpeed = data?.wind?.speed;
-        resultWindSpeed.innerText = `${windSpeed} mph`;
+        resultWindSpeed.innerText = `${windSpeed} ${speedUnits} winds`;
 
         const icon = data.weather[0].icon;
 

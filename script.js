@@ -37,7 +37,7 @@ async function getWeather(event) {
         const data = await response.json();
         const temp = Math.round(data?.main?.temp);
         const cityName = data?.name;
-        resultTemp.innerText = `The current temperature in ${cityName} is: ${temp}`;
+        resultTemp.innerText = `${cityName} ${temp}`;
 
         const tempLow = Math.round(data.main.temp_min);
         resultTempLow.innerText = `Low: ${tempLow}`;

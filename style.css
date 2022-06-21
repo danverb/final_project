@@ -11,11 +11,16 @@ body {
 	height:100vh;
 }
 
+/*Text and icon sizes*/
+.result-text-size {
+	font-size: 2em;
+}
+
 .background-image-container::after {
 	content:"";
 	display:block;
 	background-color: rgb(26, 45, 47);
-	opacity:0.4;
+	opacity:0.1;
 	height:100vh;
 	width:100vw;
 	position: absolute;
@@ -115,7 +120,7 @@ li {
 }
 
 .result-container {
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.3);
 	display:flex;
 	flex-direction: column;
 	align-items: center;
@@ -125,6 +130,7 @@ li {
 	border:none;
 	border-radius: 20px;
 	color:black;
+	backdrop-filter: blur(2px);
 }
 
 

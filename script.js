@@ -91,10 +91,5 @@ async function getWeather(event) {
     } 
 }
 
-const reset = document.querySelector("#temp-switch");
-reset.addEventListener("click", resetResult);
-function resetResult(){
-    getWeather();
-}
 
 

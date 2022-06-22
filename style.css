@@ -14,12 +14,8 @@ body {
 
 /*Text and icon sizes*/
 .result-text-size {
-<<<<<<< HEAD
 	font-size: 1.7em;
 	font-weight:bold;
-=======
-	font-size: 2em;
->>>>>>> parent of 090dfb1 (still hasn't broken)
 }
 
 #result {
@@ -42,9 +38,6 @@ body {
 #city-name{
 	font-size:1.3em;
 }
-
-
-
 
 
 
@@ -108,7 +101,7 @@ li {
 	flex-direction: column;
 	align-items: center;
 	height:100vh;
-	justify-content: space-evenly;
+	justify-content: center;
 }
 
 .form-container {
@@ -134,10 +127,10 @@ li {
 }
 
 #submit-button {
-	border: 2px solid black;
+	border: none;
 	background: none;
 	color: white;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 
 .form-switch {
@@ -147,7 +140,7 @@ li {
 
 .result-container {
 	width:60vw;
-	height:65vh;
+	height:50vh;
 	border:none;
 	border-radius: 20px;
 	position:relative;
@@ -189,7 +182,6 @@ li {
 	width:100%;
 	height:100%;
 	position:absolute;
-	top:8%;
 	color: black;
 	border-radius: 20px;
 	z-index:100;

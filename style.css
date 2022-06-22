@@ -22,16 +22,24 @@ body {
 	font-size: 4em;
 }
 
+.hero-text {
+	fobt-size:1.3em;
+}
+
 @media (max-width:1024px) {
 	.result-text-size {
 		font-size: 1.5em
+	}
+
+	.hero-text {
+		font-size:1em;
 	}
 }
 
 
 @media (max-width:380px) {
 	.result-text-size {
-		font-size: 1.3em;
+		font-size: 1.2em;
 	}
 }
 

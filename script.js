@@ -83,8 +83,7 @@ async function getWeather(event) {
 
         let newBackground = conditions[`${weatherMain}`]
         
-        const emptyBackground = document.querySelector(".result-background-image")
-        emptyBackground.style.backgroundImage = newBackground;
+        resultContainer.style.backgroundImage = newBackground;
        
     } else {
         alert("Please enter a city");

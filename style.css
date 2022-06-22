@@ -83,7 +83,7 @@ body {
 	justify-content: space-between;
 	padding:15px 15px;
 	animation-name: move;
-	animation: move 1s ease-out;
+	animation: move 1s linear;
 }
 
 @keyframes move {
@@ -91,6 +91,15 @@ body {
 		transform: translateY(15px);
 		opacity: 0;
 	}
+
+	30% {
+		opacity: .2;
+	}
+
+	50% {
+		opacity:calc(.5;)
+	}
+
 	100% {
 		transform:translateY(0);
 		opacity: 1;
@@ -128,7 +137,7 @@ li {
 .hero-text-container {
 	padding-bottom:40px;
 	animation-name: move;
-	animation: move 1.1s ease-out;
+	animation: move 1.1s linear;
 }
 
 .form-container {
@@ -138,7 +147,7 @@ li {
 	justify-content:space-between;	
 	padding-bottom: 15px;
 	animation-name: move;
-	animation: move 1.25s ease-out;
+	animation: move 1.15s linear;
 }
 
 

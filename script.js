@@ -1,6 +1,6 @@
 //Query selectors for form input
 const weatherForm = document.querySelector("#weather-search");
-const cityInput = document.querySelector("#city");
+const cityInput = document.querySelector("#city-input");
 const submit = document.querySelector("#submit");
 
 //Query selectors for displaying result
@@ -19,7 +19,6 @@ const api = "454d05ebd24526c72d0c9bd6862193f6"
 weatherForm.addEventListener("submit", getWeather);
 
 async function getWeather(event) {
-    // resultContainer.classList.remove("result-container-open");
     event.preventDefault();
     const city = cityInput.value;
     let units = "";
@@ -71,6 +70,7 @@ async function getWeather(event) {
         const weatherMain = data.weather[0].main;
         console.log(typeof weatherMain);
 
+        // Adds background to result div based on weather condition
         let conditions = {
             "Rain": "url('pexels-pixabay-414659.jpg')", 
             "Thunderstorm":"url('pexels-pixabay-414659.jpg')", 
